@@ -14,6 +14,12 @@ import accountRoutes from "./views/accounts/AccountsRoutes";
 import panelRoutes from "./views/panels/PanelRoutes";
 import tradesRoutes from "./views/trades/TradesRoutes";
 import inviteRoutes from "./views/invite/InviteRoutes";
+import strategyRoutes from "./views/strategy/StrategyRoutes";
+import financeRoutes from "./views/finance/FinanceRoutes";
+import depositRoutes from "./views/deposit/DepositRoutes";
+import clientRoutes from "./views/client/ClientRoutes";
+import affiliateRoutes from "./views/affiliate/AffiliateRoutes";
+import adminRoutes from "./views/admin/AdminRoutes";
 
 const redirectRoute = [
   {
@@ -41,6 +47,12 @@ const routes = [
   ...panelRoutes,
   ...tradesRoutes,
   ...inviteRoutes,
+  ...strategyRoutes,
+  ...financeRoutes,
+  ...depositRoutes,
+  ...clientRoutes,
+  ...affiliateRoutes,
+  ...adminRoutes,
   ...errorRoute,
 ];
 

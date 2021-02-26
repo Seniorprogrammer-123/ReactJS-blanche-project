@@ -15,7 +15,7 @@ const tradesRoutes = [
     component: TradeForm
   },
   {
-    path: "/trades/detailview/:param1/:param2/:param3/:param4/:param5/:param6",
+    path: "/trades/detailview",
     component: DetailForm
   }
 ];

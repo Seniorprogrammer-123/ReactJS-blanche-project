@@ -1,11 +1,13 @@
 import React from "react";
 import Stepper from "@material-ui/core/Stepper";
+import { Link } from 'react-router-dom'
 import Step from "@material-ui/core/Step";
 import StepLabel from "@material-ui/core/StepLabel";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import AddAccountDialog from "./AddAccountDialog";
 import AddDepositDialog from "./AddDepositDialog";
+import { Block } from "@material-ui/icons";
 
 function getSteps() {
   return [
@@ -40,6 +42,22 @@ function getStepContent(stepIndex) {
       return `register an api first to deposit`;
   }
 }
+
+const subscriber = [
+  {
+    tname: "Bono Costa",
+    sname: "SuperBot 2.0",
+    exchange: "Bitmex",
+    totalprofit: "+688",
+    dayprofit: "+10",
+    hourprofit: "-0.55",
+    risklevel: "10",
+    peformancefee: "50",
+    totalusers: "bluegraph",
+    peformance: "500"
+  }
+];
+
 
 export default function StepperForm() {
   const [activeStep, setActiveStep] = React.useState(0);
@@ -104,7 +122,22 @@ export default function StepperForm() {
         )}
       </div>
       <div className="py-12" />
-      <AddAccountDialog className="display:inline-block" /><AddDepositDialog className="display:inline-block" />
+      <AddAccountDialog className="display:inline-block" />
+      <AddDepositDialog className="display:inline-block" />
+      <Link className="bg-green text-white btn"
+        to={{ pathname: '/panels/dashboard', state: { 
+          tname         : subscriber.tname,
+          sname         : subscriber.sname,
+          exchange      : subscriber.exchange,
+          totalprofit   : subscriber.totalprofit,
+          dayprofit     : subscriber.dayprofit,
+          hourprofit    : subscriber.hourprofit,
+          risklevel     : subscriber.risklevel,
+          peformancefee : subscriber.peformancefee,
+          totalusers    : subscriber.totalusers,
+          peformance    : subscriber.peformance
+        } }}>
+        Go Strategy Page</Link>
     </div>
   );
 }

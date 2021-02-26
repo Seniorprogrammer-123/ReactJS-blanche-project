@@ -1,7 +1,6 @@
 import React from "react";
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 import {
-  Button,
   Table,
   TableHead,
   TableBody,
@@ -70,20 +69,20 @@ function detailView(value) {
 }
 
 const PaginationTable = () => {
-  const [rowsPerPage, setRowsPerPage] = React.useState(5);
-  const [page, setPage] = React.useState(0);
+const [rowsPerPage, setRowsPerPage] = React.useState(5);
+const [page, setPage] = React.useState(0);
 
-  const handleChangePage = (event, newPage) => {
-    setPage(newPage);
-  };
+const handleChangePage = (event, newPage) => {
+  setPage(newPage);
+};
 
-  const handleChangeRowsPerPage = event => {
-    setRowsPerPage(+event.target.value);
-  };
+const handleChangeRowsPerPage = event => {
+  setRowsPerPage(+event.target.value);
+};
 
-  const handleReset = () => {
-    return <Redirect to='/invite/doinvite' />
-  };
+const handleReset = () => {
+  return <Redirect to='/invite/doinvite' />
+};
 
   return (
     <div className="w-100 overflow-auto">
@@ -139,7 +138,20 @@ const PaginationTable = () => {
                   {subscriber.totalusers}
                 </TableCell>
                 <TableCell className="px-0" className={getColor(subscriber.risklevel)}>
-                  <Button variant="outlined" color="primary" id="ahaah" onClick={() => alert("ok")}>Detail View</Button>{/* this.props.history.push("/session/forgot-password") */}
+                <Link
+                  to={{ pathname: '/trades/detailview', state: { 
+                    tname         : subscriber.tname,
+                    sname         : subscriber.sname,
+                    exchange      : subscriber.exchange,
+                    totalprofit   : subscriber.totalprofit,
+                    dayprofit     : subscriber.dayprofit,
+                    hourprofit    : subscriber.hourprofit,
+                    risklevel     : subscriber.risklevel,
+                    peformancefee : subscriber.peformancefee,
+                    totalusers    : subscriber.totalusers,
+                    peformance    : subscriber.peformance
+                  } }}>
+                  Detail View </Link>
                 </TableCell>
               </TableRow>
             ))}

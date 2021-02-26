@@ -101,13 +101,7 @@ export const navigations = [
   //       iconText: "T"
   //     }
   //   ]
-  // },
-
-  {
-    name: "Create Account",
-    icon: "person_add",
-    path: "/accounts/create"
-  },
+  // },  
 
   {
     name: "Dashboard",
@@ -128,9 +122,63 @@ export const navigations = [
   },
 
   {
-    name: "Invite and Earn",
+    name: "Invite and Earn Money",
     icon: "explicit",
     path: "/invite/doinvite"
+  },
+
+  {
+    name: "My Account",
+    icon: "person_add",
+    path: "/accounts/create"
+  },
+
+  {
+    name: "Admin Dashboard",
+    icon: "supervisor_account",
+    path: "/admin/dashboard"
+  },
+
+  {
+    name: "Affiliate Dashboard",
+    icon: "supervisor_account",
+    path: "/affiliate/dashboard"
+  },
+
+  {
+    name: "Affiliate Manage",
+    icon: "supervisor_account",
+    path: "/affiliate/manage"
+  },
+
+  {
+    name: "Client Dashboard",
+    icon: "supervisor_account",
+    path: "/client/dashboard"
+  },
+
+  {
+    name: "Credit Deposit",
+    icon: "supervisor_account",
+    path: "/deposit/credit"
+  },
+
+  {
+    name: "Last Deposit",
+    icon: "supervisor_account",
+    path: "/finance/index"
+  },
+
+  {
+    name: "Finance",
+    icon: "supervisor_account",
+    path: "/finance/home"
+  },
+
+  {
+    name: "Strategy Manager",
+    icon: "supervisor_account",
+    path: "/strategy/manager"
   },
   
   
