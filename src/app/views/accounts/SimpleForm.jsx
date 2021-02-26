@@ -2,19 +2,9 @@ import React, { Component } from "react";
 import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
 import {
   Button,
-  Icon,
   Grid,
-  Radio,
-  RadioGroup,
-  FormControlLabel,
-  Checkbox
 } from "@material-ui/core";
-import {
-  MuiPickersUtilsProvider,
-  KeyboardDatePicker
-} from "@material-ui/pickers";
 import "date-fns";
-import DateFnsUtils from "@date-io/date-fns";
 
 class SimpleForm extends Component {
   state = {
@@ -85,6 +75,7 @@ class SimpleForm extends Component {
                 onChange={this.handleChange}
                 type="text"
                 name="name"
+                variant="outlined"
                 value={name}
                 validators={["required"]}
                 errorMessages={["this field is required"]}
@@ -95,6 +86,7 @@ class SimpleForm extends Component {
                 onChange={this.handleChange}
                 type="text"
                 name="username"
+                variant="outlined"
                 value={username}
                 validators={[
                   "required",
@@ -109,6 +101,7 @@ class SimpleForm extends Component {
                 onChange={this.handleChange}
                 type="email"
                 name="email"
+                variant="outlined"
                 value={email}
                 validators={["required", "isEmail"]}
                 errorMessages={["this field is required", "email is not valid"]}
@@ -119,6 +112,7 @@ class SimpleForm extends Component {
                 onChange={this.handleChange}
                 type="text"
                 name="affiliate"
+                variant="outlined"
                 value={affiliate}
                 validators={["required"]}
                 errorMessages={["this field is required"]}
@@ -129,6 +123,7 @@ class SimpleForm extends Component {
                 onChange={this.handleChange}
                 name="password"
                 type="password"
+                variant="outlined"
                 value={password}
                 validators={["required"]}
                 errorMessages={["this field is required"]}
@@ -139,6 +134,7 @@ class SimpleForm extends Component {
                 onChange={this.handleChange}
                 name="confirmPassword"
                 type="password"
+                variant="outlined"
                 value={confirmPassword}
                 validators={["required", "isPasswordMatch"]}
                 errorMessages={[

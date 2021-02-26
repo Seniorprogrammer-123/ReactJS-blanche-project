@@ -5,10 +5,18 @@ const StrategyForm = MatxLoadable({
   loader: () => import("./StrategyForm")
 });
 
+const StrategyCreateForm = MatxLoadable({
+  loader: () => import("./StrategyCreateForm")
+});
+
 const strategyRoutes = [
   {
     path: "/strategy/manager",
     component: StrategyForm
+  },
+  {
+    path: "/strategy/create",
+    component: StrategyCreateForm
   }
 ];
 

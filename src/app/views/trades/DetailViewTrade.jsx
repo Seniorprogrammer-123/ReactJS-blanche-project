@@ -8,41 +8,6 @@ import {
 import { withStyles } from '@material-ui/core/styles';
 import ModifiedAreaChart from "./shared/ModifiedAreaChart";
 
-const subscribarList = [
-  {
-    tname: "Bono Costa",
-    sname: "SuperBot 2.0",
-    exchange: "Bitmex",
-    totalprofit: "+688",
-    dayprofit: "+10",
-    hourprofit: "-0.55",
-    risklevel: "10",
-    peformancefee: "50",
-    totalusers: "bluegraph",
-    peformance: "500"
-  }
-];
-
-const data = {
-  labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
-  datasets: [
-    {
-      label: "First dataset",
-      data: [33, 53, 85, 41, 44, 65],
-      fill: true,
-      backgroundColor: "rgba(75,192,192,0.2)",
-      borderColor: "rgba(75,192,192,1)"
-    },
-    {
-      label: "Second dataset",
-      data: [33, 25, 35, 51, 54, 76],
-      fill: false,
-      borderColor: "#742774"
-    }
-  ]
-};
-
-
 
 const BorderLinearProgress = withStyles((theme) => ({
   root: {

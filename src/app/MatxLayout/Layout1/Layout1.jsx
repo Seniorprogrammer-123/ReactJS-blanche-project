@@ -8,7 +8,6 @@ import { isMdScreen, classList } from "utils";
 import { renderRoutes } from "react-router-config";
 import Layout1Topbar from "./Layout1Topbar";
 import Layout1Sidenav from "./Layout1Sidenav";
-import Footer from "../SharedCompoents/Footer";
 import AppContext from "app/appContext";
 
 

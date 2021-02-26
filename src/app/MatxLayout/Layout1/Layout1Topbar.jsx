@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import {
   Icon,
-  IconButton,
-  Badge,
   MenuItem,
   withStyles,
   MuiThemeProvider

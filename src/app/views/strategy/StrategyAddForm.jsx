@@ -2,11 +2,21 @@ import React, { Component } from "react";
 import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
 import {
   Button,
-  Grid
+  Grid,
+  TextareaAutosize
 } from "@material-ui/core";
 import "date-fns";
+import { SimpleCard } from "matx";
+import TextField from '@material-ui/core/TextField';
+import Autocomplete from '@material-ui/lab/Autocomplete';
 
-class SimpleForm extends Component {
+const top100Films = [
+  { title: 'The Shawshank Redemption', year: 1994 },
+  { title: 'The Godfather', year: 1972 },
+  { title: 'The Godfather: Part II', year: 1974 }
+];
+
+class StrategyAddForm extends Component {
   state = {
     username: "",
     firstName: "",
@@ -19,6 +29,8 @@ class SimpleForm extends Component {
     gender: "",
     agreement: ""
   };
+
+ 
 
   componentDidMount() {
     // custom rule will have name 'isPasswordMatch'
@@ -57,11 +69,11 @@ class SimpleForm extends Component {
       name,
       affiliate,
       password,
-      confirmPassword,
       email
     } = this.state;
     return (
       <div>
+        <SimpleCard title="Add Your Strategy">
         <ValidatorForm
           ref="form"
           onSubmit={this.handleSubmit}
@@ -71,20 +83,30 @@ class SimpleForm extends Component {
             <Grid item lg={6} md={6} sm={12} xs={12}>
               <TextValidator
                 className="mb-16 w-100"
-                label="Name"
+                label="Strategy Name"
                 onChange={this.handleChange}
                 type="text"
                 name="name"
+                variant="outlined"
                 value={name}
                 validators={["required"]}
                 errorMessages={["this field is required"]}
               />
+              <Autocomplete
+                id="free-solo-demo"
+                options={top100Films.map((option) => option.title)}
+                renderInput={(params) => (
+                  <TextField {...params} label="Exchage" margin="normal" variant="outlined" />
+                )}
+              />
+              <br />
               <TextValidator
                 className="mb-16 w-100"
-                label="Username (Min length 4, Max length 9)"
+                label="API"
                 onChange={this.handleChange}
                 type="text"
                 name="username"
+                variant="outlined"
                 value={username}
                 validators={[
                   "required",
@@ -95,58 +117,71 @@ class SimpleForm extends Component {
               />              
               <TextValidator
                 className="mb-16 w-100"
-                label="Email"
+                label="Secret Key"
                 onChange={this.handleChange}
                 type="email"
                 name="email"
+                variant="outlined"
                 value={email}
                 validators={["required", "isEmail"]}
                 errorMessages={["this field is required", "email is not valid"]}
               />
+              <Autocomplete
+                id="free-solo-demo"
+                options={top100Films.map((option) => option.title)}
+                renderInput={(params) => (
+                  <TextField {...params} label="Trading Type" margin="normal" variant="outlined" />
+                )}
+              />
+              <Autocomplete
+                id="free-solo-demo"
+                options={top100Films.map((option) => option.title)}
+                renderInput={(params) => (
+                  <TextField {...params} label="Margin" margin="normal" variant="outlined" />
+                )}
+              />
+              <br />
               <TextValidator
                 className="mb-16 w-100"
-                label="Affiliate"
+                label="Minium Balance"
                 onChange={this.handleChange}
                 type="text"
                 name="affiliate"
+                variant="outlined"
                 value={affiliate}
                 validators={["required"]}
                 errorMessages={["this field is required"]}
               />
               <TextValidator
                 className="mb-16 w-100"
-                label="Password"
+                label="Wallet to Profits"
                 onChange={this.handleChange}
                 name="password"
                 type="password"
+                variant="outlined"
                 value={password}
                 validators={["required"]}
                 errorMessages={["this field is required"]}
               />
-              <TextValidator
-                className="mb-16 w-100"
-                label="Reentry Password"
-                onChange={this.handleChange}
-                name="confirmPassword"
-                type="password"
-                value={confirmPassword}
-                validators={["required", "isPasswordMatch"]}
-                errorMessages={[
-                  "this field is required",
-                  "password didn't match"
-                ]}
+            </Grid>
+            <Grid item lg={6} md={6} sm={12} xs={12}>
+              <TextField
+                id="outlined-multiline-static"
+                label="Strategy Description"
+                multiline
+                rows={34}
+                variant="outlined"
               />
             </Grid>
           </Grid>
-          <Button color="primary" variant="contained" type="submit">
-            <span className="pl-8 capitalize">Create Your Account</span>
-          </Button>
+          <Button color="primary" variant="contained" type="submit" style={{width:"100%"}}>
+          <span className="pl-8 capitalize">Add Your Strategy</span>
+        </Button>
         </ValidatorForm>
-        <div>
-        </div>
+        </SimpleCard>
       </div>
     );
   }
 }
 
-export default SimpleForm;
+export default StrategyAddForm;

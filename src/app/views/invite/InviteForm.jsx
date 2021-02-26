@@ -1,20 +1,11 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import {
   Grid,
-  Card
+  Button
 } from "@material-ui/core";
-
-import DoughnutChart from "../charts/echarts/Doughnut";
-
-import ModifiedAreaChart from "./shared/ModifiedAreaChart";
-import StatCards from "./shared/StatCards";
-import TableCard from "./shared/TableCard";
-import RowCards from "./shared/RowCards";
-import StatCards2 from "./shared/StatCards2";
-import UpgradeCard from "./shared/UpgradeCard";
-import Campaigns from "./shared/Campaigns";
+import { ValidatorForm } from "react-material-ui-form-validator";
 import { withStyles } from "@material-ui/styles";
-
+import { SimpleCard } from 'matx';
 
 class InviteForm extends Component {
   state = {};
@@ -23,75 +14,29 @@ class InviteForm extends Component {
     let { theme } = this.props;
 
     return (
-      <Fragment>
-        <div className="pb-86 pt-30 px-30 bg-primary">
-          <ModifiedAreaChart
-            height="280px"
-            option={{
-              series: [
-                {
-                  data: [34, 45, 31, 45, 31, 43, 26, 43, 31, 45, 33, 40],
-                  type: "line"
-                }
-              ],
-              xAxis: {
-                data: [
-                  "Jan",
-                  "Feb",
-                  "Mar",
-                  "Apr",
-                  "May",
-                  "Jun",
-                  "Jul",
-                  "Aug",
-                  "Sep",
-                  "Oct",
-                  "Nov",
-                  "Dec"
-                ]
-              }
-            }}
-          ></ModifiedAreaChart>
-        </div>
-
-        <div className="analytics m-sm-30 mt--72">
-          <Grid container spacing={3}>
-            <Grid item lg={8} md={8} sm={12} xs={12}>
-
-              <StatCards theme={theme}/>
-
-              {/* Top Selling Products */}
-              <TableCard/>
-
-              <StatCards2/>
-
-              <h4 className="card-title text-muted mb-16">Ongoing Projects</h4>
-              <RowCards />
-
-            </Grid>
-
-            <Grid item lg={4} md={4} sm={12} xs={12}>
-              <Card className="px-24 py-16 mb-16">
-                <div className="card-title">Traffic Sources</div>
-                <div className="card-subtitle">Last 30 days</div>
-                <DoughnutChart
-                  height="300px"
-                  color={[
-                    theme.palette.primary.dark,
-                    theme.palette.primary.main,
-                    theme.palette.primary.light
-                  ]}
-                />
-              </Card>
-
-              <UpgradeCard/>
-
-              <Campaigns/>
-
+      <div className="m-sm-30">
+      <SimpleCard title="Start Earning Money Today">
+        <ValidatorForm
+          ref="form"
+          onSubmit={this.handleSubmit}
+          onError={errors => null}
+        >
+          <Grid container spacing={6}>
+            <Grid item lg={6} md={6} sm={12} xs={12}>
+              <div>
+                <p>
+                  With our system, you can earn money just by inviting people.<br />
+                  You will earn 10% of everything your invited pay to the trade free.
+                </p>
+              </div>
             </Grid>
           </Grid>
-        </div>
-      </Fragment>
+          <Button color="primary" variant="contained" type="submit">
+            <span className="pl-8 capitalize">Start Making Money By Inviting People</span>
+          </Button>
+        </ValidatorForm>
+      </SimpleCard>
+      </div>
     );
   }
 }

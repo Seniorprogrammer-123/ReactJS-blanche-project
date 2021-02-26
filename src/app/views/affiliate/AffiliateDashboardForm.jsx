@@ -1,6 +1,5 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
-import { makeStyles } from '@material-ui/core/styles';
 import { SimpleCard } from "matx";
 import { Grid } from "@material-ui/core";
 import ModifiedAreaChart from "./shared/ModifiedAreaChart";
@@ -12,20 +11,15 @@ import {
     TableCell,
     TablePagination
 } from "@material-ui/core";
-import InputLabel from '@material-ui/core/InputLabel';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
 
+import TextField from '@material-ui/core/TextField';
+import Autocomplete from '@material-ui/lab/Autocomplete';
 
-const useStyles = makeStyles((theme) => ({
-  formControl: {
-    margin: theme.spacing(1),
-    minWidth: 120,
-  },
-  selectEmpty: {
-    marginTop: theme.spacing(2),
-  },
-}));
+const top100Films = [
+  { title: 'The Shawshank Redemption', year: 1994 },
+  { title: 'The Godfather', year: 1972 },
+  { title: 'The Godfather: Part II', year: 1974 }
+];
 
 const subscribarList = [
     {
@@ -42,21 +36,6 @@ const subscribarList = [
     }
   ];
   
-  function getText(value) {
-    if (value <= 5) {
-        return `Conservative`;
-    }else if(value <= 10){
-        return `Normal`;
-    }else if(value <= 20){
-        return `Slightly Aggressive`;
-    }else if(value <= 30){
-        return `Aggressive`;
-    }else if(value <= 50){
-        return `Very Aggressive`;
-    }else{
-        return `Super Aggressive`;
-    }
-  }
   
   function getColor(value) {
     if (value <= 0) {
@@ -66,14 +45,6 @@ const subscribarList = [
     }
   }
   
-  function detailView(value) {
-    if (value <= 0) {
-        return `text-error`;
-    }else{
-        return `text-green`;
-    }
-  }
-
 
 export default function AffiliateDashboardForm() {
 
@@ -93,36 +64,18 @@ export default function AffiliateDashboardForm() {
         name: 'hai',
     });
 
-    const handleChange = (event) => {
-        const name = event.target.name;
-        setState({
-            ...state,
-            [name]: event.target.value,
-        });
-    };
-
   
   return (
     <div>
       <Grid container spacing={6}>
-          <Grid item lg={3} md={3} sm={12} xs={12}>
-              <FormControl fullWidth>
-                  <InputLabel htmlFor="age-native-required">Address</InputLabel>
-                  <Select
-                      native
-                      value={state.age}
-                      onChange={handleChange}
-                      name="age"
-                      inputProps={{
-                          id: 'age-native-required',
-                      }}
-                  >
-                      <option aria-label="None" value="" />
-                      <option value={10}>www.amaziex.com/bhewson</option>
-                      <option value={20}>www.bitmex.com/sample1</option>
-                      <option value={30}>www.sample.com/sample2</option>
-                  </Select>
-              </FormControl>
+          <Grid item lg={6} md={6} sm={12} xs={12}>
+          <Autocomplete
+            id="free-solo-demo"
+            options={top100Films.map((option) => option.title)}
+            renderInput={(params) => (
+              <TextField {...params} label="Site Link Address" margin="normal" variant="outlined" />
+            )}
+          />
           </Grid>
           <Grid item lg={3} md={3} sm={12} xs={12}>
             <Button variant="outlined" color="primary">Copy Your Link</Button>

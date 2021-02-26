@@ -2,11 +2,7 @@ import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import {
   Switch,
-  Icon,
   withStyles,
-  MenuItem,
-  Tooltip,
-  IconButton,
   MuiThemeProvider
 } from "@material-ui/core";
 
@@ -23,20 +19,6 @@ import SidenavTheme from "../MatxTheme/SidenavTheme";
 import { isMdScreen } from "utils";
 
 const styles = theme => ({});
-
-const IconButtonWhite = withStyles(theme => ({
-  root: {
-    // color: theme.palette.getContrastText(purple[500]),
-    backgroundColor: "transparent",
-    padding: "5px"
-  }
-}))(IconButton);
-
-const IconSmall = withStyles(() => ({
-  root: {
-    fontSize: "1rem"
-  }
-}))(Icon);
 
 class Layout1Sidenav extends Component {
   state = {
@@ -99,7 +81,7 @@ class Layout1Sidenav extends Component {
   );
 
   renderUser = () => {
-    let { user } = this.props;
+    // let { user } = this.props;
     return (
       <>
       

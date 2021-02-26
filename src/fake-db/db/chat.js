@@ -1,6 +1,5 @@
 import Mock from "../mock";
 import shortId from "shortid";
-import * as _ from "lodash";
 
 const ChatDB = {
   user: [

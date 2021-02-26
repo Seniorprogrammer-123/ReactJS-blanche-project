@@ -1,6 +1,5 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
-import { makeStyles } from '@material-ui/core/styles';
 import { SimpleCard } from "matx";
 import { Grid } from "@material-ui/core";
 import ModifiedAreaChart from "./shared/ModifiedAreaChart";
@@ -12,20 +11,14 @@ import {
     TableCell,
     TablePagination
 } from "@material-ui/core";
-import InputLabel from '@material-ui/core/InputLabel';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
+import TextField from '@material-ui/core/TextField';
+import Autocomplete from '@material-ui/lab/Autocomplete';
 
-
-const useStyles = makeStyles((theme) => ({
-  formControl: {
-    margin: theme.spacing(1),
-    minWidth: 120,
-  },
-  selectEmpty: {
-    marginTop: theme.spacing(2),
-  },
-}));
+const top100Films = [
+  { title: 'The Shawshank Redemption', year: 1994 },
+  { title: 'The Godfather', year: 1972 },
+  { title: 'The Godfather: Part II', year: 1974 }
+];
 
 const subscribarList = [
     {
@@ -42,22 +35,6 @@ const subscribarList = [
     }
   ];
   
-  function getText(value) {
-    if (value <= 5) {
-        return `Conservative`;
-    }else if(value <= 10){
-        return `Normal`;
-    }else if(value <= 20){
-        return `Slightly Aggressive`;
-    }else if(value <= 30){
-        return `Aggressive`;
-    }else if(value <= 50){
-        return `Very Aggressive`;
-    }else{
-        return `Super Aggressive`;
-    }
-  }
-  
   function getColor(value) {
     if (value <= 0) {
         return `text-error`;
@@ -66,14 +43,6 @@ const subscribarList = [
     }
   }
   
-  function detailView(value) {
-    if (value <= 0) {
-        return `text-error`;
-    }else{
-        return `text-green`;
-    }
-  }
-
 
 export default function StrategyDashboard() {
 
@@ -112,23 +81,13 @@ export default function StrategyDashboard() {
                 <h5>Select Your Strategy</h5>
                 <Grid container spacing={6}>
                     <Grid item lg={6} md={6} sm={12} xs={12}>
-                        <FormControl fullWidth>
-                            <InputLabel htmlFor="age-native-required">Strategy Type</InputLabel>
-                            <Select
-                                native
-                                value={state.age}
-                                onChange={handleChange}
-                                name="age"
-                                inputProps={{
-                                    id: 'age-native-required',
-                                }}
-                            >
-                                <option aria-label="None" value="" />
-                                <option value={10}>SuperBot</option>
-                                <option value={20}>Credit</option>
-                                <option value={30}>Strategy</option>
-                            </Select>
-                        </FormControl>
+                    <Autocomplete
+                      id="free-solo-demo"
+                      options={top100Films.map((option) => option.title)}
+                      renderInput={(params) => (
+                        <TextField {...params} label="Account Type" margin="normal" variant="outlined" />
+                      )}
+                    />
                     </Grid>
                     <Grid item lg={6} md={6} sm={12} xs={12}>
                         <h3>Total User Copying 500</h3>
@@ -140,19 +99,19 @@ export default function StrategyDashboard() {
           </Grid>
           <Grid item lg={2} md={2} sm={12} xs={12}>
               <SimpleCard>
-                <h5 className="text-center">Last 24 hours Profit</h5>
+                <h5 className="text-center">Last 24 hours Profit</h5><br />
                 <div className="text-center text-green thumbnail">0.55%</div>
               </SimpleCard>
           </Grid>
           <Grid item lg={2} md={2} sm={12} xs={12}>
               <SimpleCard>
-                <h5 className="text-center">Last 7 Days</h5>
+                <h5 className="text-center">Last 7 Days</h5><br />
                 <div className="text-center text-green thumbnail">4.53%</div>
               </SimpleCard>
           </Grid>
           <Grid item lg={2} md={2} sm={12} xs={12}>
               <SimpleCard>
-                <h5 className="text-center">Last Month</h5>
+                <h5 className="text-center">Last Month</h5><br />
                 <div className="text-center text-green thumbnail">24.53%</div>
               </SimpleCard>
           </Grid>
@@ -192,7 +151,7 @@ export default function StrategyDashboard() {
           </Grid>
           <Grid item lg={12} md={12} sm={12} xs={12}>
               <SimpleCard>
-                <span>Order History</span><span>Total Earning 24 hours</span><span>0.0055</span><span>Total Earning 7 Days</span><span>0.0155</span><span>Total Earning</span><span>0.155</span><div className="py-12" />
+                <div className="mark"><span>Order History</span>&nbsp;<span>: Total Earning 24 hours</span>&nbsp;<span className={getColor(0.0055)}>0.0055,</span>&nbsp;<span>Total Earning 7 Days</span>&nbsp;<span className={getColor(0.0155)}>0.0155,</span>&nbsp;<span>Total Earning</span>&nbsp;<span className={getColor(0.155)}>0.155</span>&nbsp;<div className="py-12" /></div>
                 <Table style={{ whiteSpace: "pre" }}>
                     <TableHead>
                     <TableRow>

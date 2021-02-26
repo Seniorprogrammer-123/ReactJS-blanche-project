@@ -2,9 +2,7 @@ import React, { Component } from "react";
 import {
   Card,
   Grid,
-  Button,
-  withStyles,
-  CircularProgress
+  Button
 } from "@material-ui/core";
 import { TextValidator, ValidatorForm } from "react-material-ui-form-validator";
 import { connect } from "react-redux";

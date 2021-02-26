@@ -37,6 +37,7 @@ export default function AddDepositDialog() {
             id="name"
             label="Min Deposit for Your Account is: 0.005"
             type="email"
+            variant="outlined"
             fullWidth
           />
           <div className="py-12" />
@@ -47,6 +48,7 @@ export default function AddDepositDialog() {
             id="walletaddr"
             label="Wallet Address"
             type="text"
+            variant="outlined"
             fullWidth
           />
         </DialogContent>

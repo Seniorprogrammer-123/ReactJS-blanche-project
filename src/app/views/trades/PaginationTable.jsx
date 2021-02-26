@@ -1,5 +1,5 @@
 import React from "react";
-import { Redirect, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import {
   Table,
   TableHead,
@@ -60,13 +60,6 @@ function getColor(value) {
   }
 }
 
-function detailView(value) {
-  if (value <= 0) {
-      return `text-error`;
-  }else{
-      return `text-green`;
-  }
-}
 
 const PaginationTable = () => {
 const [rowsPerPage, setRowsPerPage] = React.useState(5);
@@ -80,9 +73,6 @@ const handleChangeRowsPerPage = event => {
   setRowsPerPage(+event.target.value);
 };
 
-const handleReset = () => {
-  return <Redirect to='/invite/doinvite' />
-};
 
   return (
     <div className="w-100 overflow-auto">

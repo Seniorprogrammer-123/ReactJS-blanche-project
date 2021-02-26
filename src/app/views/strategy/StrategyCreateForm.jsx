@@ -1,15 +1,15 @@
 import React, { Component } from "react";
-import StrategyManagerForm from "./StrategyManagerForm";
+import StrategyAddForm from "./StrategyAddForm";
 
-class StrategyForm extends Component {
+class StrategyCreateForm extends Component {
   render() {
     return (
       <div className="m-sm-30">
-        <StrategyManagerForm />
+        <StrategyAddForm />
         <div className="py-12" />
       </div>
     );
   }
 }
 
-export default StrategyForm;
+export default StrategyCreateForm;

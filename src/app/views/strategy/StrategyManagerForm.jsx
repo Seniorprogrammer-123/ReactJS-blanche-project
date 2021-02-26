@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
+import { ValidatorForm } from "react-material-ui-form-validator";
 import {
-  Icon,
   Button
 } from "@material-ui/core";
 import { SimpleCard } from "matx";
@@ -10,7 +9,6 @@ import {
   TableHead,
   TableCell,
   TableBody,
-  IconButton,
   TableRow
 } from "@material-ui/core";
 import "date-fns";

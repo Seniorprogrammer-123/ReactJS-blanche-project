@@ -1,6 +1,4 @@
 import React from "react";
-import Button from "@material-ui/core/Button";
-import { makeStyles } from '@material-ui/core/styles';
 import { SimpleCard } from "matx";
 import { Grid } from "@material-ui/core";
 import ModifiedAreaChart from "./shared/ModifiedAreaChart";
@@ -12,21 +10,14 @@ import {
     TableCell,
     TablePagination
 } from "@material-ui/core";
-import InputLabel from '@material-ui/core/InputLabel';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
 
-
-const useStyles = makeStyles((theme) => ({
-  formControl: {
-    margin: theme.spacing(1),
-    minWidth: 120,
-  },
-  selectEmpty: {
-    marginTop: theme.spacing(2),
-  },
-}));
-
+function getColor(value) {
+  if (value <= 0) {
+      return `text-error`;
+  }else{
+      return `text-green`;
+  }
+}
 const subscribarUsers = [
     {
         email: "Email",
@@ -55,38 +46,6 @@ const subscribarUsers = [
     }
   ];
   
-  function getText(value) {
-    if (value <= 5) {
-        return `Conservative`;
-    }else if(value <= 10){
-        return `Normal`;
-    }else if(value <= 20){
-        return `Slightly Aggressive`;
-    }else if(value <= 30){
-        return `Aggressive`;
-    }else if(value <= 50){
-        return `Very Aggressive`;
-    }else{
-        return `Super Aggressive`;
-    }
-  }
-  
-  function getColor(value) {
-    if (value <= 0) {
-        return `text-error`;
-    }else{
-        return `text-green`;
-    }
-  }
-  
-  function detailView(value) {
-    if (value <= 0) {
-        return `text-error`;
-    }else{
-        return `text-green`;
-    }
-  }
-
 
 export default function AdminDashboardForm() {
 
@@ -99,19 +58,6 @@ export default function AdminDashboardForm() {
 
     const handleChangeRowsPerPage = event => {
     setRowsPerPage(+event.target.value);
-    };
-
-    const [state, setState] = React.useState({
-        age: '',
-        name: 'hai',
-    });
-
-    const handleChange = (event) => {
-        const name = event.target.name;
-        setState({
-            ...state,
-            [name]: event.target.value,
-        });
     };
 
   

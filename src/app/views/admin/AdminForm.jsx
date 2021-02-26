@@ -1,6 +1,5 @@
 import React from "react";
 import AdminDashboardForm from "./AdminDashboardForm";
-import { SimpleCard } from "matx";
 
 const AdminForm = () => {
   return (

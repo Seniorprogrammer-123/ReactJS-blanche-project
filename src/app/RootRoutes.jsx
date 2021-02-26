@@ -20,6 +20,7 @@ import depositRoutes from "./views/deposit/DepositRoutes";
 import clientRoutes from "./views/client/ClientRoutes";
 import affiliateRoutes from "./views/affiliate/AffiliateRoutes";
 import adminRoutes from "./views/admin/AdminRoutes";
+import beatradeRoutes from "./views/beatrade/BeatradeRoutes";
 
 const redirectRoute = [
   {
@@ -53,6 +54,7 @@ const routes = [
   ...clientRoutes,
   ...affiliateRoutes,
   ...adminRoutes,
+  ...beatradeRoutes,
   ...errorRoute,
 ];
 

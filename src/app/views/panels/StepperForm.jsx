@@ -7,7 +7,6 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import AddAccountDialog from "./AddAccountDialog";
 import AddDepositDialog from "./AddDepositDialog";
-import { Block } from "@material-ui/icons";
 
 function getSteps() {
   return [
