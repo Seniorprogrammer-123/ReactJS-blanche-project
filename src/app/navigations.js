@@ -83,6 +83,12 @@ export const navigations = [
     icon: "library_add",
     path: "/panels/dashboard"
   },
+
+  {
+    name: "Detail View",
+    icon: "library_add",
+    path: "/trades/detailview"
+  },
   
   
 ];
