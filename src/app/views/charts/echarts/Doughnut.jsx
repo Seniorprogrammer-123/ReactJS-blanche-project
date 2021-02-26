@@ -66,7 +66,6 @@ const DoughnutChart = ({ height, color = [], theme }) => {
             textStyle: {
               fontSize: "14",
               fontWeight: "normal"
-              // color: "rgba(15, 21, 77, 1)"
             },
             formatter: "{b} \n{c} ({d}%)"
           }

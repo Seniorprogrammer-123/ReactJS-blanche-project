@@ -8,6 +8,7 @@ import Typography from "@material-ui/core/Typography";
 import AddAccountDialog from "./AddAccountDialog";
 import AddDepositDialog from "./AddDepositDialog";
 
+
 function getSteps() {
   return [
     "Connect Your Exchange Account",
@@ -40,6 +41,14 @@ function getStepContent(stepIndex) {
     default:
       return `register an api first to deposit`;
   }
+}
+
+function AddAccount(){
+
+}
+
+function AddDeposit(){
+
 }
 
 const subscriber = [
@@ -121,8 +130,8 @@ export default function StepperForm() {
         )}
       </div>
       <div className="py-12" />
-      <AddAccountDialog className="display:inline-block" />
-      <AddDepositDialog className="display:inline-block" />
+      <AddAccountDialog className="display:inline-block" onClick={AddAccount()} />
+      <AddDepositDialog className="display:inline-block" onClick={AddDeposit()} />
       <Link className="bg-green text-white btn"
         to={{ pathname: '/panels/dashboard', state: { 
           tname         : subscriber.tname,
@@ -137,6 +146,7 @@ export default function StepperForm() {
           peformance    : subscriber.peformance
         } }}>
         Go Strategy Page</Link>
+        <div className="py-12" />
     </div>
   );
 }

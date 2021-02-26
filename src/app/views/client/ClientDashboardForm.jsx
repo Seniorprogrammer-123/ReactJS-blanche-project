@@ -1,7 +1,7 @@
 import React from "react";
 import { SimpleCard } from "matx";
 import { Grid } from "@material-ui/core";
-import ModifiedAreaChart from "./shared/ModifiedAreaChart";
+import LineGraph from '../charts/echarts/LineGraph';
 import {
     Table,
     TableHead,
@@ -108,35 +108,10 @@ export default function ClientDashboardForm() {
           <Grid item lg={12} md={12} sm={12} xs={12}>
               <SimpleCard>
                 <h2>Total Profit: 0.085 BTC</h2>
-                <div className="pb-86 pt-30 px-30 bg-primary">
-                  <ModifiedAreaChart
-                    height="280px"
-                    option={{
-                      series: [
-                        {
-                          data: [34, 45, 31, 45, 31, 43, 26, 43, 31, 45, 33, 40],
-                          type: "line"
-                        }
-                      ],
-                      xAxis: {
-                        data: [
-                          "Jan",
-                          "Feb",
-                          "Mar",
-                          "Apr",
-                          "May",
-                          "Jun",
-                          "Jul",
-                          "Aug",
-                          "Sep",
-                          "Oct",
-                          "Nov",
-                          "Dec"
-                        ]
-                      }
-                    }}
-                  ></ModifiedAreaChart>
-                </div>
+                <LineGraph
+                  data={[15, 26, 24, 26, 35, 23, 30, 31, 32.8, 43, 68, 78, 89, 56]}
+                  labels={['2021-02-11', '2021-02-12', '2021-02-13', '2021-02-14', '2021-02-15', '2021-02-16', '2021-02-17', '2021-02-18', '2021-02-19', '2021-02-20', '2021-02-21', '2021-02-22', '2021-02-23', '2021-02-24']}
+                />
               </SimpleCard>
           </Grid>
           <Grid item lg={12} md={12} sm={12} xs={12}>

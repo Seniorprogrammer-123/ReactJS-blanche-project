@@ -6,7 +6,7 @@ import {
     LinearProgress
 } from "@material-ui/core";
 import { withStyles } from '@material-ui/core/styles';
-import ModifiedAreaChart from "./shared/ModifiedAreaChart";
+import LineGraph from '../charts/echarts/LineGraph';
 
 
 const BorderLinearProgress = withStyles((theme) => ({
@@ -66,35 +66,10 @@ class PaginationTable extends React.Component {
           <Grid item lg={9} md={8} sm={12} xs={12}>
               <SimpleCard>
                 <h2>Total Profit</h2>
-                <div className="pb-86 pt-30 px-30 bg-primary">
-                  <ModifiedAreaChart
-                    height="280px"
-                    option={{
-                      series: [
-                        {
-                          data: [34, 45, 31, 45, 31, 43, 26, 43, 31, 45, 33, 40],
-                          type: "line"
-                        }
-                      ],
-                      xAxis: {
-                        data: [
-                          "Jan",
-                          "Feb",
-                          "Mar",
-                          "Apr",
-                          "May",
-                          "Jun",
-                          "Jul",
-                          "Aug",
-                          "Sep",
-                          "Oct",
-                          "Nov",
-                          "Dec"
-                        ]
-                      }
-                    }}
-                  ></ModifiedAreaChart>
-                </div>
+                <LineGraph
+                  data={[15, 15, 17, 18, 20, 26, 28, 29, 39, 30, 41, 68, 87, 100]}
+                  labels={['2021-02-11', '2021-02-12', '2021-02-13', '2021-02-14', '2021-02-15', '2021-02-16', '2021-02-17', '2021-02-18', '2021-02-19', '2021-02-20', '2021-02-21', '2021-02-22', '2021-02-23', '2021-02-24']}
+                />
               </SimpleCard>
           </Grid>
           <Grid item lg={3} md={4} sm={12} xs={12}>

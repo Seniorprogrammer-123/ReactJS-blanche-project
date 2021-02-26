@@ -77,6 +77,12 @@ export const navigations = [
     icon: "library_add",
     path: "/strategy/create"
   },
+
+  {
+    name: "Custome Dashboard",
+    icon: "library_add",
+    path: "/panels/dashboard"
+  },
   
   
 ];
