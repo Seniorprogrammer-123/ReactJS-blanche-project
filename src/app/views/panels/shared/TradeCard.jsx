@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import AddAccountDialog from "../AddAccountDialog";
+import { Link } from "react-router-dom";
 import {
   Card,
   InputLabel
@@ -10,7 +10,7 @@ const content = {
   color: 'red'
 };
 
-class UpgradeCard extends Component
+class TradeCard extends Component
 {
   constructor(props){
     super(props);
@@ -32,11 +32,11 @@ class UpgradeCard extends Component
             {this.state.contentname}
           </p>
           </div>
-          <AddAccountDialog className="display:inline-block" label={this.state.buttonLabel} />
+          <Link to="/trades/listview" variant="outlined" color="primary" className="btn inline-block" >Select a Trade</Link>
         </Card>
       </Card>
     );
   }
 };
 
-export default UpgradeCard;
+export default TradeCard;

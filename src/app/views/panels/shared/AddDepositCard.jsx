@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import AddAccountDialog from "../AddAccountDialog";
+import AddDepositDialog from "../AddDepositDialog";
 import {
   Card,
   InputLabel
@@ -10,7 +10,7 @@ const content = {
   color: 'red'
 };
 
-class UpgradeCard extends Component
+class AddDepositCard extends Component
 {
   constructor(props){
     super(props);
@@ -32,11 +32,11 @@ class UpgradeCard extends Component
             {this.state.contentname}
           </p>
           </div>
-          <AddAccountDialog className="display:inline-block" label={this.state.buttonLabel} />
+          <AddDepositDialog className="display:inline-block" />
         </Card>
       </Card>
     );
   }
 };
 
-export default UpgradeCard;
+export default AddDepositCard;

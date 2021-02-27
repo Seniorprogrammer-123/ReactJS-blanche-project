@@ -142,7 +142,7 @@ export default function AffiliateDashboardForm() {
                             <TableCell className="px-0 capitalize" align="center">
                             {subscriber.time}
                             </TableCell>
-                            <TableCell className="px-0 capitalize" align="center" className={getColor(subscriber.amount)}>
+                            <TableCell align="center" className={"px-0 capitalize " + getColor(subscriber.amount)}>
                             {subscriber.amount}
                             </TableCell>
                             <TableCell className="px-0 capitalize" align="center">

@@ -6,6 +6,8 @@ import React from "react";
 import { Grid } from "@material-ui/core";
 
 import UpgradeCard from "./shared/UpgradeCard";
+import AddDepositCard from "./shared/AddDepositCard";
+import TradeCard from "./shared/TradeCard";
 
 
 
@@ -43,10 +45,10 @@ const AppForm = () => {
           <UpgradeCard content={getStepContent(0)} buttonlabel={getButtonLabel(0)} step={1}/>
         </Grid>
         <Grid item lg={4} md={4} sm={12} xs={12}>
-          <UpgradeCard content={getStepContent(1)} buttonlabel={getButtonLabel(1)} step={2}/>
+          <AddDepositCard content={getStepContent(1)} buttonlabel={getButtonLabel(1)} step={2}/>
         </Grid>
         <Grid item lg={4} md={4} sm={12} xs={12}>
-          <UpgradeCard content={getStepContent(2)} buttonlabel={getButtonLabel(2)} step={3}/>
+          <TradeCard content={getStepContent(2)} buttonlabel={getButtonLabel(2)} step={3}/>
         </Grid>
       </Grid>  
       <div className="py-12" />

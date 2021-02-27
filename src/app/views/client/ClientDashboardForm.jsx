@@ -131,13 +131,13 @@ export default function ClientDashboardForm() {
                             <TableCell className="px-0 capitalize" align="center">
                             {subscriber.time}
                             </TableCell>
-                            <TableCell className="px-0 capitalize" align="center" className={getColor(subscriber.amount)}>
+                            <TableCell align="center" className={"px-0 capitalize " + getColor(subscriber.amount)}>
                             {subscriber.amount}
                             </TableCell>
                             <TableCell className="px-0 capitalize" align="center">
                             {subscriber.peformance}
                             </TableCell>
-                            <TableCell className="px-0 capitalize text-center py-24 w-100" align="center" className={getColor(subscriber.credit)}>
+                            <TableCell align="center" className={"px-0 capitalize text-center py-24 w-100 " + getColor(subscriber.credit)}>
                             {subscriber.credit}
                             </TableCell>
                             <TableCell className="px-0 capitalize text-center py-24 w-100" align="center">

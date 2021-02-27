@@ -106,16 +106,16 @@ const handleChangeRowsPerPage = event => {
                 <TableCell className="px-0 capitalize" align="left">
                   {subscriber.exchange}
                 </TableCell>
-                <TableCell className="px-0 capitalize text-center py-24 w-100" className={getColor(subscriber.totalprofit)}>
+                <TableCell className={"px-0 capitalize text-center py-24 w-100 " + getColor(subscriber.totalprofit)}>
                   {subscriber.totalprofit}%
                 </TableCell>
-                <TableCell className="px-0 capitalize" className={getColor(subscriber.dayprofit)}>
+                <TableCell className={"px-0 capitalize "+ getColor(subscriber.dayprofit)}>
                   {subscriber.dayprofit}%
                 </TableCell>
-                <TableCell className="px-0 capitalize" className={getColor(subscriber.hourprofit)}>
+                <TableCell className={"px-0 capitalize "+ getColor(subscriber.hourprofit)}>
                   {subscriber.hourprofit}%
                 </TableCell>
-                <TableCell className="px-0 capitalize" className={getColor(subscriber.risklevel)}>
+                <TableCell className={"px-0 capitalize "+ getColor(subscriber.risklevel)}>
                   {getText(subscriber.risklevel)}
                 </TableCell>
                 <TableCell className="px-0 capitalize">
@@ -124,10 +124,10 @@ const handleChangeRowsPerPage = event => {
                 <TableCell className="px-0 capitalize">
                   {subscriber.peformance}
                 </TableCell>
-                <TableCell className="px-0" className={getColor(subscriber.risklevel)}>
+                <TableCell className={"px-0 "+ getColor(subscriber.risklevel)}>
                   {subscriber.totalusers}
                 </TableCell>
-                <TableCell className="px-0" className={getColor(subscriber.risklevel)}>
+                <TableCell className={"px-0 " + getColor(subscriber.risklevel)}>
                 <Link
                   to={{ pathname: '/trades/detailview', state: { 
                     tname         : subscriber.tname,

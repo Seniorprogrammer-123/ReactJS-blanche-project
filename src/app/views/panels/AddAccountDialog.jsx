@@ -32,7 +32,7 @@ export default function AddAccountDialog(props) {
 
   return (
     <div>
-      <Button variant="outlined" size="large" variant="contained" color="primary" onClick={handleClickOpen}>
+      <Button variant="outlined" size="large" color="primary" onClick={handleClickOpen}>
         {props.label}
       </Button>
       <Dialog
@@ -69,7 +69,7 @@ export default function AddAccountDialog(props) {
           />
         </DialogContent>
         <DialogActions>
-          <AddDepositDialog onClick={handleClose} className="display:inline-block" />
+          <Button onClick={handleClose} variant="outlined" color="primary" className="display:inline-block">Add Your Account</Button>
         </DialogActions>
       </Dialog>
     </div>

@@ -120,13 +120,13 @@ export default function AdminDashboardForm() {
                           <TableCell className="px-0 capitalize" align="center">
                           {subscriber.email}
                           </TableCell>
-                          <TableCell className="px-0 capitalize" align="center" className={getColor(subscriber.amount)}>
+                          <TableCell align="center" className={"px-0 capitalize " + getColor(subscriber.amount)}>
                           {subscriber.balance}
                           </TableCell>
                           <TableCell className="px-0 capitalize" align="center">
                           {subscriber.copying}
                           </TableCell>
-                          <TableCell className="px-0 capitalize text-center py-24 w-100" align="center" className={getColor(subscriber.credit)}>
+                          <TableCell align="center" className={"px-0 capitalize text-center py-24 w-100 " + getColor(subscriber.credit)}>
                           {subscriber.totalprofit}
                           </TableCell>
                       </TableRow>
