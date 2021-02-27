@@ -49,6 +49,13 @@ const subscribarList = [
   var graphHeight = {
     height: 200
   };
+
+  let linkbtnstyle = {
+    margin: 24,
+    lineHeight: '43.625px',
+    marginTop: '16px',
+    width: '200px'
+  }
   
 
 export default function AffiliateDashboardForm() {
@@ -78,7 +85,7 @@ export default function AffiliateDashboardForm() {
           />
           </Grid>
           <Grid item lg={3} md={3} sm={12} xs={12}>
-            <Button variant="outlined" color="primary">Copy Your Link</Button>
+            <Button variant="outlined" color="primary" style = {linkbtnstyle}>Copy Your Link</Button>
           </Grid>
       </Grid>
       <div className="m-sm-30">

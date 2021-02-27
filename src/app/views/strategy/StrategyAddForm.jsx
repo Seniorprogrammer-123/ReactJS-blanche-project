@@ -164,13 +164,14 @@ class StrategyAddForm extends Component {
               />
             </Grid>
             <Grid item lg={6} md={6} sm={12} xs={12}>
-              <TextField
+              <TextValidator
                 id="outlined-multiline-static"
                 label="Strategy Description"
                 multiline
-                rows={34}
+                rows={35}
                 variant="outlined"
-              />
+                fullwidth="true"
+              /><br />
             </Grid>
           </Grid>
           <Button color="primary" variant="contained" type="submit" style={{width:"100%"}}>
