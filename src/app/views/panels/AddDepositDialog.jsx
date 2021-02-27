@@ -20,8 +20,8 @@ export default function AddDepositDialog() {
 
   return (
     <div>
-      <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-        Add Your Account
+      <Button variant="outlined" color="primary" className="abtn" onClick={handleClickOpen}>
+        Deposit to Get Started
       </Button>
       <Dialog
         open={open}

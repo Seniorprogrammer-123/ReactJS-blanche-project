@@ -32,7 +32,7 @@ class TradeCard extends Component
             {this.state.contentname}
           </p>
           </div>
-          <Link to="/trades/listview" variant="outlined" color="primary" className="btn inline-block" >Select a Trade</Link>
+          <Link to="/trades/listview" variant="outlined" color="primary" className="abtn inline-block" >Select a Trade</Link>
         </Card>
       </Card>
     );

@@ -470,7 +470,7 @@ Mock.onPost("/api/scrum-board/delete-column").reply(config => {
   let deleteIndex = null;
 
   board.list.map((column, index) => {
-    if (column.id === listId) deleteIndex = index;
+    if (column.id === listId) deleteIndex = index;return {};
   });
 
   board.list.splice(deleteIndex, 1);

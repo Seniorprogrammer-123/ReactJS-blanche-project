@@ -8,7 +8,6 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
-import AddDepositDialog from "./AddDepositDialog";
 
 const top100Films = [
   { title: 'The Shawshank Redemption', year: 1994 },

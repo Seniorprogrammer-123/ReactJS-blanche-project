@@ -228,6 +228,7 @@ Mock.onGet("/api/chat/chat-room").reply(config => {
           unread: 0
         });
       }
+      return {};
     });
     ChatDB.chatCollection.push({
       id: chatId,
@@ -275,6 +276,7 @@ Mock.onPost("/api/chat/add").reply(config => {
       delete chatDetails.chatId;
       chatRoom.chats.push({ ...chatDetails });
     }
+    return {};
   });
   let chats = ChatDB.chatCollection.find(chatRoom => chatRoom.id === chatId)
     .chats;
