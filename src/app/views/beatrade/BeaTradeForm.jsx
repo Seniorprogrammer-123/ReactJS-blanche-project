@@ -52,20 +52,13 @@ class BeaTradeForm extends Component {
   };
 
   render() {
-    let {
-      username,
-      name,
-      affiliate,
-      password,
-      confirmPassword,
-      email
-    } = this.state;
+    
     return (
       <div>
         <ValidatorForm
           ref="form"
           onSubmit={this.handleSubmit}
-          onError={errors => null}
+          // onError={errors => null}
         >
           <Grid container spacing={6}>
             <Grid item lg={6} md={6} sm={12} xs={12}>

@@ -8,6 +8,7 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
+import AddDepositDialog from "./AddDepositDialog";
 
 const top100Films = [
   { title: 'The Shawshank Redemption', year: 1994 },
@@ -15,28 +16,24 @@ const top100Films = [
   { title: 'The Godfather: Part II', year: 1974 }
 ];
 
-export default function AddAccountDialog() {
+export default function AddAccountDialog(props) {
+  
   const [open, setOpen] = React.useState(false);
 
-  const [state, setState] = React.useState({
-    age: '',
-    name: 'hai',
-  });
-
+  
   function handleClickOpen() {
     setOpen(true);
-  }
+  } 
 
   function handleClose() {
     setOpen(false);
   }
 
- 
 
   return (
     <div>
-      <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-        Add Your Account
+      <Button variant="outlined" size="large" variant="contained" color="primary" onClick={handleClickOpen}>
+        {props.label}
       </Button>
       <Dialog
         open={open}
@@ -72,9 +69,7 @@ export default function AddAccountDialog() {
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color="primary" className="bg-green text-white">
-            Add Your Account
-          </Button>
+          <AddDepositDialog onClick={handleClose} className="display:inline-block" />
         </DialogActions>
       </Dialog>
     </div>

@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
 import {
   Button,
-  Grid,
-  TextareaAutosize
+  Grid
 } from "@material-ui/core";
 import "date-fns";
 import { SimpleCard } from "matx";

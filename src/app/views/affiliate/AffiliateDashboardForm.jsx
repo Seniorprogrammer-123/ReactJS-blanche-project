@@ -64,11 +64,6 @@ export default function AffiliateDashboardForm() {
     setRowsPerPage(+event.target.value);
     };
 
-    const [state, setState] = React.useState({
-        age: '',
-        name: 'hai',
-    });
-
   
   return (
     <div>

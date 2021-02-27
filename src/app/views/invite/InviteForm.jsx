@@ -11,8 +11,7 @@ class InviteForm extends Component {
   state = {};
 
   render() {
-    let { theme } = this.props;
-
+    
     return (
       <div className="m-sm-30">
       <SimpleCard title="Start Earning Money Today">

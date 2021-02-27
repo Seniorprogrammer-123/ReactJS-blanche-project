@@ -21,7 +21,7 @@ export default function AddDepositDialog() {
   return (
     <div>
       <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-        Add Credits to Your Account
+        Add Your Account
       </Button>
       <Dialog
         open={open}
@@ -53,7 +53,7 @@ export default function AddDepositDialog() {
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color="primary" className="bg-green text-white">
+          <Button onClick={handleClose} variant="outlined" color="primary">
             Add Deposit
           </Button>
         </DialogActions>

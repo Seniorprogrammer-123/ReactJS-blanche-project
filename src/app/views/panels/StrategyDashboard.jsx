@@ -57,19 +57,6 @@ export default function StrategyDashboard() {
     setRowsPerPage(+event.target.value);
     };
 
-    const [state, setState] = React.useState({
-        age: '',
-        name: 'hai',
-    });
-
-    const handleChange = (event) => {
-        const name = event.target.name;
-        setState({
-            ...state,
-            [name]: event.target.value,
-        });
-    };
-
   
   return (
     <div>

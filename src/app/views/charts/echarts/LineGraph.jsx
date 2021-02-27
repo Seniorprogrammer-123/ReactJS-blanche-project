@@ -21,7 +21,7 @@ export default class LineGraph extends Component {
 
     buildChart = () => {
         const myChartRef = this.chartRef.current.getContext("2d");
-        const { data, average, labels } = this.props;
+        const { data, labels } = this.props;
 
         if (typeof myLineChart !== "undefined") myLineChart.destroy();
 
