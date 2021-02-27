@@ -42,8 +42,7 @@ export default function AddDepositDialog() {
           />
           <div className="py-12" />
           <FormLabel>Send the value to this Wallet</FormLabel>
-          <TextField
-            autoFocus
+          <TextField            
             margin="dense"
             id="walletaddr"
             label="Wallet Address"

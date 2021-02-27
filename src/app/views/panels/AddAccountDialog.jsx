@@ -45,11 +45,10 @@ export default function AddAccountDialog(props) {
             id="free-solo-demo"
             options={top100Films.map((option) => option.title)}
             renderInput={(params) => (
-              <TextField {...params} label="Account Type" margin="normal" variant="outlined" />
+              <TextField {...params} label="Account Type" margin="normal" variant="outlined" autofocus />
             )}
           />
           <TextField
-            autoFocus
             margin="dense"
             id="api"
             label="API"
@@ -58,7 +57,6 @@ export default function AddAccountDialog(props) {
             fullWidth
           />
           <TextField
-            autoFocus
             margin="dense"
             id="name"
             label="Secret Key"

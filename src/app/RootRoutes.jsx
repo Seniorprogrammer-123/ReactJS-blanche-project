@@ -25,7 +25,7 @@ const redirectRoute = [
   {
     path: "/",
     exact: true,
-    component: () => <Redirect to="/panels/dashboard" />
+    component: () => <Redirect to="/panels/stepbystep" />
   }
 ];
 
